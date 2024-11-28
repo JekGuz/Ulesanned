@@ -64,7 +64,21 @@ from tkinter import ROUND
 # print(f"Maa diametr {round(r_maa_sm, 2)}")
 # print(f"{round(kogus, 2)} - 2euroseid münte tuleb panna üksteise kõrvale  ")
 
-# #Ülesanne 5
-print("kill-koll kill-koll killadi-koll "*4)
+# # #Ülesanne 5
+# print("kill-koll kill-koll killadi-koll "*4)
 
-#Ülesanne 6
+# #Ülesanne 6 
+# txt = "Rong see sõitis tsuhh tsuhh tsuhh,\npiilupart oli rongijuht.\nRattad tegid rat tat taa,\nrat tat taa ja tat tat taa.\nAga seal rongi peal,\nkas sa tead, kes olid seal?\n\nRong see sõitis tuut tuut tuut,\npiilupart oli rongijuht.\nRattad tegid kill koll koll,\nkill koll koll ja kill koll kill."
+# print(txt.upper())  #upper - upper() все символы в верхнем регистре.
+
+# #Ülesanne 7
+# try:
+#     a = float(input("Palun sisestage ristküliku külg "))
+#     b = float(input("palun sisestage ristküliku külg "))
+#     P = 2 * (a + b)
+#     S = a * b
+#     print(f"RRistküliku ümbermõõt on {round(P, 2)}, \nRistküliku pindala on {round(S, 2)}")
+# except:
+#     print("Peate sisestama numbri!")
+
+#Ülesanne 8
