@@ -102,3 +102,4 @@ except:
         print("Midagi läks viga!")
 
 #Ülesanne 6
+
