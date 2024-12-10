@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Vigade otsing.py</StartupFile>
+    <StartupFile>Tingimuslik operaator IF.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="Lihtsad prgrammid.py" />
     <Compile Include="Funktsioonide print%28%29,input%28%29, float%28%29, int%28%29 kasutamine.py" />
+    <Compile Include="Tingimuslik operaator IF.py" />
     <Compile Include="Vigade otsing.py" />
     <Compile Include="Основы программирования на Python.py" />
   </ItemGroup>
