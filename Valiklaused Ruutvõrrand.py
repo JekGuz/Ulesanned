@@ -1,4 +1,5 @@
 from datetime import *
+from math import *
 
 #Ülesanne 1
 try:
@@ -35,8 +36,8 @@ except:
 
 #Ülesanne 3
 try:
-    sugu = input("Kas sa oled naine (Y) või mees (N)? ")
-    if sugu.upper() == "Y":
+    sugu = input("Kas sa oled naine (M) või mees (N)? ")
+    if sugu.upper() == "M":
         list = ["esmaspäev", "teisipäev", "kolmapäev", "neljapäev", "reedel", "laupäev", "pühapäev"]
         print(f"nädalapäevad:\n0. {list[0]};\n1. {list[1]};\n2. {list[2]};\n3. {list[3]};\n4. {list[4]};\n5. {list[5]};\n6. {list[6]};")
         p = int(input("Sisesta number: "))
@@ -102,3 +103,26 @@ except:
         print("Midagi läks viga!")
 
 #Ülesanne 6
+try:
+    y = input("Kas lahendame tasandamise?(Y/N) ")
+    if y.upper() == "Y":
+        a = float(input("Sisesta number: "))
+        b = float(input("Sisesta number: "))
+        c = float(input("Sisesta number: "))
+        D = (b**2) - (4 * a * c)
+        if D > 0:
+            x1 = (-b + sqrt(D)) / (2 * a)
+            x2 = (-b - sqrt(D)) / (2 * a)
+            print(f"Võrrandis on kaks vastust: {round(x1, 2)} ja {round(x2, 2)}")
+        elif D == 0:
+            x = -b / (2 * a)
+            print(f"Võrrandis on üks vastust: {round(x, 2)}")
+        elif D < 0:
+            print("Lahendusi pole")
+        else:
+            print("Load...")
+    else:
+        print("Head päeva!")
+
+except:
+    print("Midagi läks viga!")
