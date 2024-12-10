@@ -175,6 +175,7 @@ except:
 # # except:
 # #     print("Viga")
 
+###Ülesanne 8.1
 # # try:
 # #     list = ["leib", "pimm", "vorst", "juust", "kana", "kala", "banaan"]
 # #     print(f"Tooded laos:\n{list[0]};\n{list[1]};\n{list[2]};\n{list[3]};\n{list[4]};\n{list[5]};\n{list[6]};")
