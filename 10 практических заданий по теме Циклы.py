@@ -116,6 +116,16 @@
 # except:
 #     print("Midagi läks vale.")
 
+# #Ülesanne 10
+# arraOfInputElements = input("Sisesta arv(): ").split()
+# maximumNumber = arraOfInputElements[0]
+# for x in arraOfInputElements:
+#     if x > maximumNumber:
+#       maximumNumber = x
+# print("Suurim number on "+ maximumNumber)
+
+
+
 # #Ülesanne 16
 # for i in range(1, 10):
 #     for j in range(1, 10):
