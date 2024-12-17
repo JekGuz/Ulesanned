@@ -44,7 +44,7 @@ for i in range(1,N+1,1):
 
 hind = (correct / N) * 100
 print("\nТест завершен!")
-print(f"Правильных ответов: {correct} из {N} оценка {hind}% ")
+print(f"Правильных ответов: {correct} из {N} оценка {round(hind,2)} ")
 if hind < 60:
     grade = "Оценка 2"
 elif 60 <= hind < 75:
