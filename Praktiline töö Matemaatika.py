@@ -21,9 +21,25 @@ for i in range(1,N+1,1):
         num2 = random.randint(1, 10)
         operation = random.choice(['**', '+', '-', '*'])
 
-    question =print(f"{i+1}.{num1} {operation} {num2}")
-    answer = input("Какой ответ: ")
-    print(f"Правльно {answer}")
+    # question =print(f"{i+1}.{num1} {operation} {num2}")
+    # answer = input("Какой ответ: ")
+    # if answer == correct_answer
+    #     print(f"Правльный {answer}")
+    # else:
+    #     print(f"Ответ не верный, правильный ответ: {correct_answer}")
+
+    if operation == "/" and num2 == 0:
+        num2 = 1  # Избегаем деления на ноль
+    question = f"{num1} {operation} {num2}"
+    correct_answer = eval(question)
+    correct_answer = round(correct_answer, 2) if operation == '/' else correct_answer
+
+    print(f"{i}. {question}")
+    answer = float(input("Какой ответ: "))
+    if answer == correct_answer:
+        print("Правильно!")
+    else:
+        print(f"Ответ не верный, правильный ответ: {correct_answer}")
 
 
 
