@@ -38,7 +38,7 @@ for i in range(1,N+1,1):
     answer = float(input("Какой ответ: "))
     if answer == correct_answer:
         print("Правильно!")
-        correct += 1   #не считает почему????????? я думала запишит
+        correct + 1   #не считает почему????????? я думала запишит == плохо, + хотя бы дает дальше идти
     else:
         print(f"Ответ не верный, правильный ответ: {correct_answer}")
 
