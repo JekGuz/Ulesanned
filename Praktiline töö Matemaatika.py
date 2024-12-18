@@ -38,19 +38,19 @@ for i in range(1,N+1,1):
     answer = float(input("Какой ответ: "))
     if answer == correct_answer:
         print("Правильно!")
-        correct + 1   #не считает почему????????? я думала запишит == плохо, + хотя бы дает дальше идти
+        correct = int(+1)   #не считает почему????????? я думала запишит == плохо, + хотя бы дает дальше идти
     else:
         print(f"Ответ не верный, правильный ответ: {correct_answer}")
 
-hind = (correct / N) * 100
+hind = int((correct / N) * 100)
 print("\nТест завершен!")
 print(f"Правильных ответов: {correct} из {N} оценка {round(hind,2)} ")
 if hind < 60:
     grade = "Оценка 2"
-elif 60 <= hind < 75:
+elif 60 >= hind < 75:
     grade = "Оценка 3"
-elif 75 <= hind < 90:
-    grade = "Оценка 4"
+elif 75 >= hind < 90:
+    grade >= "Оценка 4"
 else:
     grade = "Оценка 5"
 
