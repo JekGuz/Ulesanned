@@ -1,5 +1,5 @@
 from math import *
-import random
+from random import *
 
 
 print("Добро Пожаловать на проверку математических знаний")
@@ -8,19 +8,19 @@ N = int(input("Сколько раз будем решать примеры: "))
 lv = int(input("Введите уровень сложности: "))
 for i in range(1,N+1,1):
     if lv == 1:
-        num1 = random.randint(1, 10)  #random.randint(start, stop)
-        num2 = random.randint(1, 10)
-        operation = random.choice(["+", "-"])   #Метод choice()возвращает случайно выбранный элемент из указанной последовательности, в мое случаии списка
+        num1 = randint(1, 10)  #random.randint(start, stop)
+        num2 = randint(1, 10)
+        operation = choice(["+", "-"])   #Метод choice()возвращает случайно выбранный элемент из указанной последовательности, в мое случаии списка
     elif lv == 2:
-        num1 = random.randint(1, 10)
-        num2 = random.randint(1, 10)
-        operation = random.choice(["*", "/"])
+        num1 = randint(1, 10)
+        num2 = randint(1, 10)
+        operation = choice(["*", "/"])
     else:
-        num1 = random.randint(1, 50)
-        num2 = random.randint(1, 10)
-        operation = random.choice(['**', '+', '-', '*'])
+        num1 = randint(1, 50)
+        num2 = randint(1, 10)
+        operation = choice(['**', '+', '-', '*'])
 
-    # question =print(f"{i+1}.{num1} {operation} {num2}")
+    # question = print(f"{i}.{num1} {operation} {num2}")
     # answer = input("Какой ответ: ")
     # if answer == correct_answer
     #     print(f"Правльный {answer}")
@@ -29,9 +29,9 @@ for i in range(1,N+1,1):
     # if operation == "/" and num2 == 0:   # деление на 0 # Избегаем деления на ноль
         # num2 = 1
 
-    question = (f"{num1} {operation} {num2}")
-    correct_answer = eval(question) #Функция eval()оценивает указанное выражение.
-    correct_answer = round(correct_answer, 2) 
+    question = f"{num1} {operation} {num2}"
+    correct_answer = eval(question) #Функция eval() оценивает указанное выражение.
+    correct_answer = round(correct_answer, 2)  #мб можно убрать.
 
     print(f"{i}. {question}")
     answer = float(input("Какой ответ: "))
@@ -49,7 +49,7 @@ if hind > 60:
 elif 60 >= hind > 75:
     grade = "Оценка 3"
 elif 75 >= hind > 90:
-    grade >= "Оценка 4"
+    grade = "Оценка 4"
 else:
     grade = "Оценка 5"
 
