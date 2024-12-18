@@ -1,4 +1,3 @@
-from random import *
 from math import *
 import random
 
@@ -27,12 +26,12 @@ for i in range(1,N+1,1):
     #     print(f"Правльный {answer}")
     # else:
     #     print(f"Ответ не верный, правильный ответ: {correct_answer}")
+    # if operation == "/" and num2 == 0:   # деление на 0 # Избегаем деления на ноль
+        # num2 = 1
 
-    if operation == "/" and num2 == 0:
-        num2 = 1  # Избегаем деления на ноль
-    question = f"{num1} {operation} {num2}"
-    correct_answer = eval(question)
-    correct_answer = round(correct_answer, 2) if operation == '/' else correct_answer
+    question = (f"{num1} {operation} {num2}")
+    correct_answer = eval(question) #Функция eval()оценивает указанное выражение.
+    correct_answer = round(correct_answer, 2) 
 
     print(f"{i}. {question}")
     answer = float(input("Какой ответ: "))
@@ -45,11 +44,11 @@ for i in range(1,N+1,1):
 hind = int((correct / N) * 100)
 print("\nТест завершен!")
 print(f"Правильных ответов: {correct} из {N} оценка {round(hind,2)} ")
-if hind < 60:
+if hind > 60:
     grade = "Оценка 2"
-elif 60 >= hind < 75:
+elif 60 >= hind > 75:
     grade = "Оценка 3"
-elif 75 >= hind < 90:
+elif 75 >= hind > 90:
     grade >= "Оценка 4"
 else:
     grade = "Оценка 5"
