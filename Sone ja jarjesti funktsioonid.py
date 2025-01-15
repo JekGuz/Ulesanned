@@ -1,53 +1,53 @@
-# # Ülesanne 1 (Koos vidoe)
-# spisok = [] # пустой список
-# numbers = [1, 2, 3, 4, 5]
-# abc = ["Abc", "B", "C"]
-# slovo = "Programmeerimine"
-# slovo_list = list(slovo)
-# print(slovo)
-# print(slovo_list)
-# while True:
-#     print("1 - добавить букву в список")
-#     print("2 - склеить/соединить список\n3 - добавить букву на i - позицию")
-#     print("4 - удалить элемент")
-#     valik = int(input()) 
-#     if valik == 1:
-#         a = input("Введите букву: ")
-#         slovo_list.append(a)
-#         print(f"Добавили {a} новый список", slovo_list)
-#     elif valik == 2:
-#         slovo_list.extend(abc)
-#         print(slovo_list)
-#     elif valik == 3:
-#         a = input("Введите букву, которую хочешь добавить: ")
-#         i = int(input("ВВедите позицию, куда хочешь добавить букву: "))
-#         slovo_list.insert(i-1,a)
-#         print(slovo_list)
-#     elif valik == 4:
-#         a = input("Введите букву, которую хочешь удалить: ")
-#         n = slovo_list.count(a)
-#         print("Количесво букв, которые содержать введеную букву ", n)
-#         if n > 0:
-#             for i in range(n):
-#                 slovo_list.remove(a)
-#         else: 
-#             print("Искомой буквы нет")
-#         print(slovo_list)
+# Ülesanne 1 (Koos vidoe)
+spisok = [] # пустой список
+numbers = [1, 2, 3, 4, 5]
+abc = ["Abc", "B", "C"]
+slovo = "Programmeerimine"
+slovo_list = list(slovo)
+print(slovo)
+print(slovo_list)
+while True:
+    print("1 - добавить букву в список")
+    print("2 - склеить/соединить список\n3 - добавить букву на i - позицию")
+    print("4 - удалить элемент")
+    valik = int(input()) 
+    if valik == 1:
+        a = input("Введите букву: ")
+        slovo_list.append(a)
+        print(f"Добавили {a} новый список", slovo_list)
+    elif valik == 2:
+        slovo_list.extend(abc)
+        print(slovo_list)
+    elif valik == 3:
+        a = input("Введите букву, которую хочешь добавить: ")
+        i = int(input("ВВедите позицию, куда хочешь добавить букву: "))
+        slovo_list.insert(i-1,a)
+        print(slovo_list)
+    elif valik == 4:
+        a = input("Введите букву, которую хочешь удалить: ")
+        n = slovo_list.count(a)
+        print("Количесво букв, которые содержать введеную букву ", n)
+        if n > 0:
+            for i in range(n):
+                slovo_list.remove(a)
+        else: 
+            print("Искомой буквы нет")
+        print(slovo_list)
 
 
 
-# # Ülesanne oma varian kuidas kasutada Listis
-# print("Alustame listi teha:")
-# s6na_list = []
-# try:
-#     N = int(input("Kui palju sõnad kirjutame? "))
-# except:
-#     print("Midagi läks valesti")
-# for i in range(N+1):
-#     s6na = input("Sõna: ")  # запрашиваем слово
-#     s6na_list.append(s6na)  # добавляем слово
-#     print(f"Listis on nüüd: {s6na_list}") 
-# print(f"Lõplik list: {s6na_list}")
+# Ülesanne oma varian kuidas kasutada Listis
+print("Alustame listi teha:")
+s6na_list = []
+try:
+    N = int(input("Kui palju sõnad kirjutame? "))
+except:
+    print("Midagi läks valesti")
+for i in range(N+1):
+    s6na = input("Sõna: ")  # запрашиваем слово
+    s6na_list.append(s6na)  # добавляем слово
+    print(f"Listis on nüüd: {s6na_list}") 
+print(f"Lõplik list: {s6na_list}")
 
 # Ülesanne i
 veel_list = ["Arvuti", "Hiir", "Klaaviatur", "Monitor"]

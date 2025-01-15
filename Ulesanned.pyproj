@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Sone ja jarjesti funktsioonid.py</StartupFile>
+    <StartupFile>praktiliine too 2 listid.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="Lihtsad prgrammid.py" />
     <Compile Include="Funktsioonide print%28%29,input%28%29, float%28%29, int%28%29 kasutamine.py" />
     <Compile Include="Plokkskeemide koostamine V2.py" />
+    <Compile Include="praktiliine too 2 listid.py" />
     <Compile Include="Praktiline töö Matemaatika.py" />
     <Compile Include="Sone ja jarjesti funktsioonid.py" />
     <Compile Include="Tingimuslik operaator IF.py" />
