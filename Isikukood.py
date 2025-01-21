@@ -40,6 +40,7 @@ while True:
     if len(str(isik)) == 11:
         print("Isikukood on õige")
         ikoodid.append(isik)
+        ikoodid.sort()  ###(key=lambda x: x % 2)   не сработало чтобы отсортеровать
         ### разбиваем красиво искукод в каждую цифру
         ikood = list(map(int,str(isik)))  #Результатом работы map является новый объект, содержащий преобразованные элементы.
         print(f"Isikukood: {ikood}")  #Чтобы видить результат
