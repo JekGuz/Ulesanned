@@ -42,7 +42,7 @@ def sugu(a:str)->str:   ### Узнать грамотно ли на каждый
         i = print("ei ole nisugune numberi")
         return i
 
-def sunnipaev(a:str)->date:
+def sunnipaev(a:str)->str:  ### -> date не работала коректно ( узнать )
     """ Sunnipäev (päev/kuu/aasta)
 
     :Kuvame isikukoodi abil inimese sünnikuupäeva
@@ -50,21 +50,44 @@ def sunnipaev(a:str)->date:
     
     """
 
+    esemene = int(str(a[0]))
+    if esemene == 1 or esemene == 2:
+        sajand = "18"
+        aasta = sajand + str(a[1]) + str(a[2])
+        kuu = str(a[3]) + str(a[4])
+        paev = str(a[5]) + str(a[6])
+        sunni = f"{aasta}-{kuu}-{paev}"
+        try:
+            sunni_date = datetime.strptime(sunni, "%Y-%m-%d")
+            return sunni_date.strftime("%d.%m.%Y")
+        except:
+            return "Sisestatud isikukoodis sünnipäеv pole korrektne!"
 
 
-    # sajand = {1: "18", 2: "18", 3: "19", 4: "19", 5: "20", 6: "20"}
-     if ikood[0] in number:
-            print("Esemene number on: ", ikood[0])   #Чтобы видить результат
-            print("Sugu on: ", sugu[ikood[0]])
+    elif esemene == 3 or esemene == 4:
+        sajand = "19"
+        aasta = sajand + str(a[1]) + str(a[2])
+        kuu = str(a[3]) + str(a[4])
+        paev = str(a[5]) + str(a[6])
+        sunni = f"{aasta}-{kuu}-{paev}"
+        try:
+            sunni_date = datetime.strptime(sunni, "%Y-%m-%d")
+            return sunni_date.strftime("%d.%m.%Y")
+        except:
+            return "Sisestatud isikukoodis sünnipäеv pole korrektne!"
 
-            aasta = sajand[ikood[0]] + str(ikood[1]) + str(ikood[2])
-            kuu = str(ikood[3]) + str(ikood[4])
-            paev = str(ikood[5]) + str(ikood[6])
-            sunni = f"{aasta}-{kuu}-{paev}"
-            print("Sünnipäev: ", sunni)
+    elif esemene == 5 or esemene == 6:
+        sajand = "20"
+        aasta = sajand + str(a[1]) + str(a[2])
+        kuu = str(a[3]) + str(a[4])
+        paev = str(a[5]) + str(a[6])
+        sunni = f"{aasta}-{kuu}-{paev}"
+        try:
+            sunni_date = datetime.strptime(sunni, "%Y-%m-%d")
+            return sunni_date.strftime("%d.%m.%Y")
+        except:
+            return "Sisestatud isikukoodis sünnipäеv pole korrektne!"
 
-            try:
-                sunni_date = datetime.strptime(sunni, "%Y-%m-%d")
-                print("Sünnipäev on korrektne: ", sunni_date.strftime("%d.%m.%Y"))
-            except:
-                print("Sisestatud isikukoodis sünnipäев pole korrektne!")
+
+
+

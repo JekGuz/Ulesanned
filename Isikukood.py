@@ -28,6 +28,10 @@ while True:
             sugu = sugu(ikood) ### обратилась к списку в самой функции def там у меня [0] - первое число списка ikood
 
             ### Дата рождения p.s без словаря опять через иф 
+            sunni_data = sunnipaev(ikood)   ### ikood спискок из исикукода
+            print(sunni_data)
+
+
 
 
         else:
