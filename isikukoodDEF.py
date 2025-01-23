@@ -66,5 +66,5 @@ def sunnipaev(a:str)->date:
             try:
                 sunni_date = datetime.strptime(sunni, "%Y-%m-%d")
                 print("Sünnipäev on korrektne: ", sunni_date.strftime("%d.%m.%Y"))
-            except ValueError:
+            except:
                 print("Sisestatud isikukoodis sünnipäев pole korrektne!")
