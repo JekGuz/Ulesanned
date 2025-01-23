@@ -20,9 +20,14 @@ while True:
             ikoodid.append(isik)
             ikoodid.sort() 
 
-            # Будем разбирать цифру с помощью def
+            ### Будем разбирать цифру с помощью def
             ikood = kood(isik)
             print(ikood)
+
+            ### Определяем пол человека по первый цифры через def (без библиотеки буду делать через 6 иф)
+            sugu = sugu(ikood) ### обратилась к списку в самой функции def там у меня [0] - первое число списка ikood
+
+            ### Дата рождения p.s без словаря опять через иф 
 
 
         else:
@@ -100,7 +105,7 @@ while True:
 #             try:
 #                 sunni_date = datetime.strptime(sunni, "%Y-%m-%d")
 #                 print("Sünnipäev on korrektne: ", sunni_date.strftime("%d.%m.%Y"))
-#             except ValueError:
+#             except:
 #                 print("Sisestatud isikukoodis sünnipäев pole korrektne!")
 
 #             ### Проверка исикукода (Взяла основу VBA, что делала дз Harjutus_4_Text_Date_Funk II)
