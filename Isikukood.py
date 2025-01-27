@@ -25,12 +25,22 @@ while True:
             print(ikood)
 
             ### Определяем пол человека по первый цифры через def (без библиотеки буду делать через 6 иф)
-            sugu = sugu(ikood) ### обратилась к списку в самой функции def там у меня [0] - первое число списка ikood
+            isugu = sugu(ikood) 
+            # обратилась к списку в самой функции def там у меня [0] - первое число списка ikood
 
             ### Дата рождения p.s без словаря опять через иф 
             sunni_data = sunnipaev(ikood)   ### ikood спискок из исикукода
             print(sunni_data)
 
+            ### Проверка исикукода (Взяла основу VBA, что делала дз Harjutus_4_Text_Date_Funk II) 
+            ### сделаею более длиное решения без хитрых for - который считает и подставляет за меня
+            ikoodkontrol = kontroll(ikood)
+            if ikoodkontrol == int(ikood[10]):    ### int!!!! не забывать инт!!!
+                print("Kontrollnumber ", ikoodkontrol, " on õige")
+            else:
+                print(f"Kontrollnumber {ikoodkontrol} ≠ {ikood[-1]} on vale")
+            
+            ### Высчитываем больницу :( без библиотеки 12 if
 
 
 
@@ -136,7 +146,7 @@ while True:
 #                     haiglamaja = nimi
 #                     print("Sünnimaja on: ", haiglamaja)
 #         else:
-#             print("Алustame uuesti")
+#             print("Аlustame uuesti")
 
 #     else:
 #         print("Isikukodus on 11 numbrit")
