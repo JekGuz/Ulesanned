@@ -135,3 +135,60 @@ def kontroll (uk:str)->str:  #mb int
     return kontrollnumber
 
 
+def haigla1 (koht: int)-> str:
+    """ Haigla kontroll
+
+    :Haiglatele eraldatud järjekorranumbri vahemikud arvatakse olevat üldjoontes järgmised:
+
+    :001...010 = Kuressaare haigla
+    :011...019 = Tartu Ülikooli Naistekliinik
+    :021...150 = Ida-Tallinna keskhaigla, Pelgulinna sünnitusmaja (Tallinn)
+    :151...160 = Keila haigla    
+    :161...220 = Rapla haigla, Loksa haigla, Hiiumaa haigla (Kärdla)    
+    :221...270 = Ida-Viru keskhaigla (Kohtla-Järve, endine Jõhvi)
+    :271...370 = Maarjamõisa kliinikum (Tartu), Jõgeva haigla
+    :371...420 = Narva haigla
+    :421...470 = Pärnu haigla
+    :471...490 = Haapsalu haigla
+    :491...520 = Järvamaa haigla (Paide)
+    :521...570 = Rakvere haigla, Tapa haigla
+    :571...600 = Valga haigla
+    :601...650 = Viljandi haigla
+    :651...700 = Lõuna-Eesti haigla (Võru), Põlva haigla
+    :rtype: str
+    
+    """
+    ###sungi_kood = str(a[7]) + str(a[8]) + str(a[9]) mb вычислю это в основном исикукоде, а тут будут иф   
+    if 1 <= koht <= 10:
+        haigla = "Kuressaare haigla"
+    elif 11 <= koht <= 19:
+        haigla = "Tartu Ülikooli Naistekliinik"
+    elif 21 <= koht <= 150: 
+        haigla = "Ida-Tallinna keskhaigla, Pelgulinna sünnitusmaja (Tallinn)"
+    elif 151 <= koht <= 160:
+        haigla = "Keila haigla"    
+    elif 161 <= koht <= 220:
+        haigla = "Rapla haigla, Loksa haigla, Hiiumaa haigla (Kärdla)"    
+    elif 221 <= koht <= 270:
+        haigla = "Ida-Viru keskhaigla (Kohtla-Järve, endine Jõhvi)"
+    elif 271 <= koht <= 370:
+        haigla = "Maarjamõisa kliinikum (Tartu), Jõgeva haigla"
+    elif 371 <= koht <= 420:
+        haigla = "Narva haigla"
+    elif 521 <= koht <= 470:
+        haigla = "Pärnu haigla"
+    elif 471 <= koht <= 490:
+        haigla = "Haapsalu haigla"
+    elif 491 <= koht <= 520:
+        haigla = "Järvamaa haigla (Paide)"
+    elif 521 <= koht <= 570:
+        haigla = "Rakvere haigla, Tapa haigla"
+    elif 571 <= koht <= 600:
+        haigla = "Valga haigla"
+    elif 601 <= koht <= 650:
+        haigla = "Viljandi haigla"
+    elif 651 <= koht <= 700:
+        haigla = "Lõuna-Eesti haigla (Võru), Põlva haigla"
+    else:
+        haiga = "Midagi on valesti"
+    return haigla

@@ -41,6 +41,10 @@ while True:
                 print(f"Kontrollnumber {ikoodkontrol} ≠ {ikood[-1]} on vale")
             
             ### Высчитываем больницу :( без библиотеки 12 if
+            sundi_kood = str(ikood[7]) + str(ikood[8]) + str(ikood[9])
+            print("Teie isukodis haiglatele määratud seerianumber: ", sundi_kood)
+            koht = haigla1(int(sundi_kood))
+            print("Haigla, kus sa sündisid: ", koht)
 
 
 
