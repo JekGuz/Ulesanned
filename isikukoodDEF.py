@@ -187,8 +187,8 @@ def haigla1 (koht: int)-> str:
         haigla = "Valga haigla"
     elif 601 <= koht <= 650:
         haigla = "Viljandi haigla"
-    elif 651 <= koht <= 700:
+    elif 651 <= koht <= 700:  
         haigla = "Lõuna-Eesti haigla (Võru), Põlva haigla"
     else:
-        haiga = "Midagi on valesti"
+        haigla = "Vaadake palun registrist, siin ei ole teie andmeid"    
     return haigla
