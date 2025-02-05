@@ -1,16 +1,18 @@
 ﻿from random import *
 
 #Ver 0.5
-loginid = ["kotik"]  #kotik on sest
-paroolid = ["qwe"]   #qwe on pass
+loginid = ["kotik"]  #kotik on sest test
+paroolid = ["qwe"]   #qwe on pass test
 while True:
-    print("1. Kas soovite registererida?\n2. Soovite sisselogida\n3. Paarol vahetamine\n4. Lõpetamine")
+    print("1. Kas soovite registererida?\n2. Soovite sisselogida\n3. Paarol vahetamine\n4. Kontroll list\n5. Lõpetada")
     vastus = int(input(": "))
     # Soovime registerimine
     if vastus == 1:
-        login = input("Sisesta oma login: ")
-        loginid.append(login)
-        print("Soovite ise kirjutada salasõna? (Y/N)")
+        try:
+            login = input("Sisesta oma login: ")
+            loginid.append(login)
+        except:
+            print("Soovite ise kirjutada salasõna? (Y/N)")
         genpsw = input(": ")
         if genpsw.upper() == "Y":
             pasw = input("Siseta oma parool: ")
@@ -18,7 +20,7 @@ while True:
             print("Nüüd te olite registreritud!")
         if genpsw.upper() == "N":
             import random
-            str0=".,:;!_*-+()/#¤%&"
+            str0 =".,:;!_*-+()/#¤%&"
             str1 = '0123456789'
             str2 = 'qwertyuiopasdfghjklzxcvbnm'
             str3 = str2.upper()
@@ -36,8 +38,11 @@ while True:
             print("Teie uus parool: ", psword)     
         # Siiseloogime
     elif vastus == 2:
-        login = input("Sisesta oma login: ")
-        pasw = input("Siseta oma parool: ")
+        try:
+            login = input("Sisesta oma login: ")
+            pasw = input("Siseta oma parool: ")
+        except:
+            print("Kontrollitud")
         if login in loginid and pasw in paroolid:
             print("Õige te olite sise logitud!")
         else:
@@ -48,20 +53,36 @@ while True:
         genpsw = input(": ")
 
         if genpsw.upper() == "Y":
+            try:
+                log = input("Sisesta login: ")
+                index = loginid.index(log)
+                logu = input("Siseta uus login: ")
+                loginid[index] = logu
+            except:
+                print(f"Teie login: {logu} ")
             vpsw = input("Sisesta vaana parool: ")
             index = paroolid.index(vpsw)
             upsw = input("Siseta uus parool: ")
             paroolid[index] = upsw
             print(f"Teie uus parool: {upsw} ")
         elif genpsw.upper() == "N":
-            vpsw = input("Sisesta vana parool: ")
-            index = paroolid.index(vpsw)
-            import random
-            str0=".,:;!_*-+()/#¤%&"
-            str1 = '0123456789'
-            str2 = 'qwertyuiopasdfghjklzxcvbnm'
-            str3 = str2.upper()
-            print(str3) # 'QWERTYUIOPASDFGHJKLZXCVBNM'
+            try:
+                log = input("Sisesta login: ")
+                index = loginid.index(log)
+                logu = input("Siseta uus login: ")
+                loginid[index] = logu
+            except:
+                print(f"Teie login: {logu} ")
+            try:
+                vpsw = input("Sisesta vana parool: ")
+                index = paroolid.index(vpsw)
+                import random
+                str0=".,:;!_*-+()/#¤%&"
+                str1 = '0123456789'
+                str2 = 'qwertyuiopasdfghjklzxcvbnm'
+                str3 = str2.upper()
+            except:
+                print(str3) # 'QWERTYUIOPASDFGHJKLZXCVBNM'
             str4 = str0+str1+str2+str3
             print(str4)
             ls = list(str4)
@@ -74,8 +95,15 @@ while True:
             paroolid[index] = psword
             print("Teie uus parool: ", psword)     
     elif vastus == 4:
+        print("Nimikirjad: ", loginid)
+        print("Salasõnad: ", paroolid)
+
+
+    elif vastus == 5:
         break
         
+
+
 
 
 # # #Ver 0
