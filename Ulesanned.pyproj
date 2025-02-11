@@ -42,7 +42,9 @@
     <Compile Include="Основы программирования на Python.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="eisoobi.txt" />
     <Content Include="kusim.txt" />
+    <Content Include="vastuvoetud.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -1,3 +1,4 @@
+from random import *
 
 def Loe_failist(fail:str)->list:
     """ reading e. ainult lugemiseks, faili kirjutada ei lasta
@@ -7,4 +8,4 @@ def Loe_failist(fail:str)->list:
     """
 f = open('kusim.txt','r')
 for line in f:
-        print(line)
+    return random(line)
