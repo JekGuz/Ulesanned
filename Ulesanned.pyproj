@@ -36,9 +36,13 @@
     <Compile Include="Tarkvaraarendaja vastuvott.py" />
     <Compile Include="Tingimuslik operaator IF.py" />
     <Compile Include="Valiklaused Ruutvõrrand.py" />
+    <Compile Include="vastuvottDef.py" />
     <Compile Include="Vigade otsing -2.py" />
     <Compile Include="Vigade otsing.py" />
     <Compile Include="Основы программирования на Python.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kusim.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
