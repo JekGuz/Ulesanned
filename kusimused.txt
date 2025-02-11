@@ -1,0 +1,29 @@
+küsimus_1: How do you print text to the console?
+vastus_1: print()
+
+küsimus_2: What are the main data types in Python?
+vastus_2: int, float, str
+
+küsimus_3: How do you create a list?
+vastus_3: numbers = [1, 2, 3]
+
+küsimus_4: How do you get the first element of a list? (lits name "number")
+vastus_4: numbers[0]
+
+küsimus_5: How do you add an item to a list?
+vastus_5: numbers.append(4)
+
+küsimus_6: How do you create a dictionary?
+vastus_6: person = {"name": "Kate", "age": 25}
+
+küsimus_7: How do you write a comment in Python?
+vastus_7: #
+
+küsimus_8: How do you make a string uppercase?
+vastus_8: .upper()
+
+küsimus_9: How do you find the length of a string?
+vastus_9: len()
+
+küsimus_9: How do you check if two values are equal?
+vastus_9: ==
