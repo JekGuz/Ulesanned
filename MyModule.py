@@ -168,6 +168,10 @@ while True:
 
 
 
+
+
+
+
 # # #Ver 0
 # loginid = []
 # paroolid = []

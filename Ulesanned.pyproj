@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>MyModule.py</StartupFile>
+    <StartupFile>euroopa_riigid.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="10 практических заданий по теме Циклы.py" />
     <Compile Include="Def_moodul.py" />
+    <Compile Include="euroopa_riigid.py" />
     <Compile Include="funktsion Def.py" />
     <Compile Include="Isikukood.py" />
     <Compile Include="isikukoodDEF.py" />
@@ -47,6 +48,8 @@
     <Content Include="eisoobi.txt" />
     <Content Include="kusim.txt" />
     <Content Include="loginid.txt" />
+    <Content Include="Riigid1.txt" />
+    <Content Include="riigid_pealinnd.txt" />
     <Content Include="salasona.txt" />
     <Content Include="vastuvoetud.txt" />
   </ItemGroup>
