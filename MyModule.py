@@ -12,8 +12,8 @@ while True:
             login = input("Sisesta oma login: ")
             loginid.append(login)
         except:
-            print("Soovite ise kirjutada salasõna? (Y/N)")
-        genpsw = input(": ")
+            print("Midagi vale")
+        genpsw = input("Soovite ise kirjutada salasõna? (Y/N): ")
         if genpsw.upper() == "Y":
             pasw = input("Siseta oma parool: ")
             paroolid.append(pasw)

@@ -8,4 +8,4 @@ def Loe_failist(fail:str)->list:
     """
 f = open('kusim.txt','r')
 for line in f:
-    return random(line)
+    print(line)
