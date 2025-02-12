@@ -14,8 +14,9 @@ from MyModeleDef import *
 
 
 # # Запускаем с файлом MyModeleDef --> где def от учителя.
-
+## C:\Users\kotik\source\repos\Ulesanned\salasona.txt
 #C:/Users/marina.oleinik/source/repos/Aut_Reg/Salasõnad.txt
+
 salasõnad=loe_failist("salasona.txt")
 kasutajanimed=loe_failist("loginid.txt")
 while True:
