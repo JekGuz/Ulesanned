@@ -42,8 +42,11 @@
     <Compile Include="Основы программирования на Python.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ankeet.txt" />
     <Content Include="eisoobi.txt" />
     <Content Include="kusim.txt" />
+    <Content Include="loginid.txt" />
+    <Content Include="salasona.txt" />
     <Content Include="vastuvoetud.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
