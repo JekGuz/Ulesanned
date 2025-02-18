@@ -60,7 +60,7 @@ while True:
     if sisend.upper() == "L":
         break
 
-    # Alustame viktoriin
+    # Alustame viktoriin / по могли с вариантом, правда, не знаю надеюсь так подойдет
     elif sisend.upper() == "V":
         print("Viktoriinis on 5 küsimused!")
         hind = 0
