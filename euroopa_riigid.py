@@ -44,13 +44,21 @@ while True:
         print(f"Pealinn: {riik_pealinn[sisend]}")
     elif sisend in pealinn_riik:
         print(f"Riik: {pealinn_riik[sisend]}")
-    
-
-    # Lisame veel riik/pealinn
-    
-    
     else:
         print("Sellist riiki või pealinna ei leitud.")
+        # Lisame veel riik/pealinn
+####################### Ei Töötab !!!!!!!!!!!!!!!!!!! MIKS?
+        valik1 = input("Kas soovid selle lisada? (jah/ei): ")
+        if valik1.upper() == "JAH":
+            valik2 = input(f"Kas '{sisend}' on riik? (jah/ei): ")
+            if valik2.upper()  == "JAH":
+                pealinn = input("Sisesta selle riigi pealinn: ")
+                lisa_faili("Riigid1.txt", sisend, pealinn) #### Не забывать "" !!! фаил . txt и обзательно в ковычках!!!
+            else:
+                riik = input("Sisesta selle pealinna riik: ")
+                lisa_faili("Riigid1.txt", riik, sisend)    
+        else:
+            print("Alustame uuesti, kui ei soovite lisada")
 
 #Veerud riigid-pealinnad
 for key,value in riik_pealinn.items():
