@@ -56,11 +56,36 @@ print(riik_pealinn.values())
 
 # Prindime riikide nimetused
 while True:
-    sisend = input("Sisesta riigi või pealinna nimi ('A' lõpetamiseks 'V' parandamiseks): ").title()
-    if sisend == "A":
+    sisend = input("Sisesta riigi või pealinna nimi\n'L' lõpetamiseks\n'P' parandamiseks\n'V' Viktoriin\n: ")
+    if sisend.upper() == "L":
         break
+
+    # Alustame viktoriin
+    elif sisend.upper() == "V":
+        print("Viktoriinis on 5 küsimused!")
+        hind = 0
+        for _ in range(5):
+            valik3 = choice(["riik", "pealinn"])
+            if valik3 == "riik":
+                riik = choice(list(riik_pealinn.keys()))
+                vastus = input(f"Mis on {riik} pealinn? ").title()
+                if vastus == riik_pealinn[riik]:
+                    print("Õige!")
+                    hind += 1
+                else:
+                    print(f"Vale! Õige vastus on {riik_pealinn[riik]}")
+            else:
+                pealinn = choice(list(pealinn_riik.keys()))
+                vastus = input(f"Mis riik on {pealinn} pealinn? ").title()
+                if vastus == pealinn_riik[pealinn]:
+                    print("Õige!")
+                    hind += 1
+                else:
+                    print(f"Vale! Õige vastus on {pealinn_riik[pealinn]}")
+        print(f"Sinu tulemus: {hind}/5 ({round((hind/5)*100, 2)}%)")
+
     # Lisame veel, kui on midagi vale.
-    elif sisend == "V":  # с заглавной буквой .title()
+    elif sisend.upper() == "L":  # с заглавной буквой .title()
         vana_riik = input("Sisesta vale riigi nimi (Enter, kui soovid parandada pealinna): ").title()
         vana_pealinn = input("Sisesta vale pealinna nimi (Enter, kui soovid parandada riig): ").title()
         
