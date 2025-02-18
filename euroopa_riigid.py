@@ -22,6 +22,24 @@ def lisa_faili(failinimi, riik, pealinn):
     with open(failinimi, 'a', encoding="utf-8-sig") as file:
         file.write(f"\n{riik}-{pealinn}")
 
+
+def muuda_faili(failinimi, vriik, uriik, vpealinn, upealinn):
+    """Muudame fail
+    Kui on vaja muutume riik/pealin
+
+    """
+    with open(failinimi, 'r', encoding="utf-8-sig") as file:
+        loe_lini = file.readlines() # Читаем линию. полностью
+        # Для перезаписи линии
+    with open(failinimi, 'w', encoding="utf-8-sig") as file:
+        for line in loe_lini:
+            if line.strip() == f"{vriik}-{vpealinn}":
+                file.write(f"{uriik}-{upealinn}\n") 
+            else:
+                file.write(line)
+
+    print (f"Vahetasin: {vriik}-{vpealinn} -> {uriik}-{upealinn}")
+
 #käivitame loodud funktsion
 riik_pealinn,pealinn_riik,riigid=failist_to_dict("Riigid1.txt")
 riigid = list(riik_pealinn.keys())
@@ -37,9 +55,30 @@ print(riik_pealinn.values())
 
 #prindime riigide nimetused
 while True:
-    sisend = input("Sisesta riigi või pealinna nimi (või 'A' lõpetamiseks): ")
+    sisend = input("Sisesta riigi või pealinna nimi ('A' lõpetamiseks 'V' parandamiseks): ")
     if sisend == "A":
         break
+    # Lisame veel kui on midagi vale.
+    elif sisend == "V":  # с заглавной буквой .title()
+        vana_riik = input("Sisesta vale riigi nimi: ").title()
+        vana_pealinn = input("Sisesta vale pealinna nimi: ").title()
+        
+        # Parandame:
+
+        if vana_riik and vana_riik in riik_pealinn:  # Vaatame kas on meie vana riik sõnastikust
+            uus_riik = input(f"Sisesta uus nimi riigile {vana_riik.upper()}: ").title()
+            uus_pealinn = riik_pealinn[vana_riik]
+        
+        elif vana_pealinn and vana_pealinn in pealinn_riik:
+            uus_pealinn = input(f"Sisesta uus nimi pealinnale {vana_pealinn.upper()}: ").title()
+            uus_pealinn = pealinn_riik[vana_pealinn] 
+        
+        else:
+            print("Sellist riiki või pealinna ei leitud, parandamine pole võimalik.")
+            continue
+
+
+
     elif sisend in riik_pealinn:
         print(f"Pealinn: {riik_pealinn[sisend]}")
     elif sisend in pealinn_riik:
