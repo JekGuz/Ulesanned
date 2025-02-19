@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Graafiline_liides.py</StartupFile>
+    <StartupFile>Grafiline_interfeis_liides_ kookku.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="Def_moodul.py" />
     <Compile Include="euroopa_riigid.py" />
     <Compile Include="funktsion Def.py" />
+    <Compile Include="Grafiline_interfeis_liides_ kookku.py" />
     <Compile Include="Isikukood.py" />
     <Compile Include="isikukoodDEF.py" />
     <Compile Include="Lihtsad prgrammid.py" />

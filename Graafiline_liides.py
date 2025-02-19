@@ -73,9 +73,6 @@ def liplikas():
 
     plt.show()
 
-liplikas()
-
-
 def vaal():
     """
     x ja y
@@ -130,4 +127,5 @@ def vaal():
 
     plt.show()
 
-vaal()
+# vaal()
+# liplikas()
