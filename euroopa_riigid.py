@@ -90,6 +90,7 @@ while True:
         vana_pealinn = input("Sisesta vale pealinna nimi (Enter, kui soovid parandada riig): ").title()
         
         # Parandame:
+
         if vana_riik and vana_riik in riik_pealinn:  # Vaatame, kas on meie vana riik sõnastikust
             uus_riik = input(f"Sisesta uus nimi riigile {vana_riik.upper()}: ").title()
             uus_pealinn = riik_pealinn[vana_riik]  # Pealinn jääb samaks
