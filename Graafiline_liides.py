@@ -1,8 +1,9 @@
 import numpy as np #x = (min, max, step)
 import matplotlib.pyplot as plt
 
-def liplikas():
+def liplikas(color:str):
     """
+    
     x ja y
 
     """
@@ -65,16 +66,17 @@ def liplikas():
     ax.set_facecolor("Lightpink")
 
         #Линии
-    color = ["c", "m", "y", "r", "g", "b", "w", "k", "y", "b", "r", "c", "k", "y", "r", "g", "b",]
+    #color = ["c", "m", "y", "r", "g", "b", "w", "k", "y", "b", "r", "c", "k", "y", "r", "g", "b",]
     for i in range(1,17):
-        plt.plot(eval(f"x{i}"), eval(f"y{i}"), "m-*")  # создаем формулу, чтобы она собирала, m-* magenta - стиль маркера звезда *
-        plt.plot(x1, y1, "m-*") #и так все наши x и y 
-        plt.plot(eval(f"x{i}"), eval(f"y{i}"), color[i-1]+"-*")
+        #plt.plot(eval(f"x{i}"), eval(f"y{i}"), "m-*")  # создаем формулу, чтобы она собирала, m-* magenta - стиль маркера звезда *
+        #plt.plot(x1, y1, "m-*") #и так все наши x и y 
+        plt.plot(eval(f"x{i}"), eval(f"y{i}"), color[0]+"-*")              #color[i-1]+"-*" - это значение с списка
 
     plt.show()
 
-def vaal():
+def vaal(color:str):
     """
+    
     x ja y
 
     """
@@ -119,11 +121,11 @@ def vaal():
     ax.set_facecolor("Lightpink")
 
     # Линии
-    color = ["c", "m", "y", "r", "g", "b", "w", "k", "y", "b", "r"]
+    #color = ["c", "m", "y", "r", "g", "b", "w", "k", "y", "b", "r"]
     for i in range(1,11):
         # plt.plot(eval(f"x{i}"), eval(f"y{i}"), "m-*")  # создаем формулу, чтобы она собирала, m-* magenta - стиль маркера звезда *
         # plt.plot(x1, y1, "m-*") и так все наши x и y 
-        plt.plot(eval(f"x{i}"), eval(f"y{i}"), color[i-1]+"-*")
+        plt.plot(eval(f"x{i}"), eval(f"y{i}"), color[0]+"-*")             #color[i-1]+"-*" - это значение с списка
 
     plt.show()
 
