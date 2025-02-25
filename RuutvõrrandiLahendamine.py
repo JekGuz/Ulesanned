@@ -68,21 +68,18 @@ aken.title("Ruutvõrrandi lahendamine")
 pealkiri = Label(aken, text="Ruutvõrrandi lahendamine", font="Times_New_Roman 24", fg="#0d79de", bg="#c3a4f5", pady=20, width=100)
 pealkiri.pack()
 
-# Поля ввода коэффициентов
+# Поля ввода коэффициентов (теперь пустые!)
 tekst_a = Entry(aken, font="Times_New_Roman 18", fg="black", bg="white", width=5)
-tekst_a.insert(0, "2")
 tekst_a.pack(side=LEFT, padx=5)
 
 Label(aken, text="x**2 +", font="Times_New_Roman 18").pack(side=LEFT)
 
 tekst_b = Entry(aken, font="Times_New_Roman 18", fg="black", bg="white", width=5)
-tekst_b.insert(0, "-10")
 tekst_b.pack(side=LEFT, padx=5)
 
 Label(aken, text="x +", font="Times_New_Roman 18").pack(side=LEFT)
 
 tekst_c = Entry(aken, font="Times_New_Roman 18", fg="black", bg="white", width=5)
-tekst_c.insert(0, "1")
 tekst_c.pack(side=LEFT, padx=5)
 
 Label(aken, text="= 0", font="Times_New_Roman 18").pack(side=LEFT)
