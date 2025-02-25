@@ -1,7 +1,10 @@
-﻿from logging import PlaceHolder
+﻿from ast import Lambda
+from logging import PlaceHolder
 from tkinter import *
+from types import LambdaType
 from Graafiline_liides import *
-global varv
+global varv, tekst
+
 
 # get получаем инфо, set отдаем инфо
 def varvi_valik():
@@ -17,13 +20,13 @@ def varvi_valik():
 
     return varv
 
-def figuur():
+def figuur(varv:str):
     """
     Vaal ja liplikas
     """
-    global varv
+
     valik = var.get()
-    varv = varvi_valik()
+    #varv = varvi_valik()
     if valik == 1:
         vaal(varv)
     elif valik == 2:
@@ -36,16 +39,16 @@ def figuur():
 aken = Tk()
 aken.geometry("900x500")
 aken.title("Graafikud")
-pealkiri = Label(aken, text = "Erinevad pildid Matplotlib abil", font = "time_new_roman 24", fg = "#0d79de", bg = "#c3a4f5", pady = 20, width = 200)
+pealkiri = Label(aken, text = "Erinevad pildid Matplotlib abil", font = "time_new_roman 24", fg = "#0d79de", bg = "#c3a4f5", pady = 20, width = 100)
 
 # Рисуем радио кнопки
 var = IntVar()
-r1 = Radiobutton(aken, text = "Vaal", font = "time_new_roman 18", variable = var, value = 1, command = figuur)
-r2 = Radiobutton(aken, text = "Liplikas", font = "time_new_roman 18", variable = var, value = 2, command = figuur)
+r1 = Radiobutton(aken, text = "Vaal", font = "time_new_roman 18", variable = var, value = 1, command = lambda:figuur(varv = varvi_valik()))
+r2 = Radiobutton(aken, text = "Liplikas", font = "time_new_roman 18", variable = var, value = 2, command = lambda:figuur(varv = varvi_valik()))
 
 # Создаем тестовый ящик
-tekst = Entry(aken, font = "time_new_roman 24", fg = "#0d79de", bg = "#c3a4f5", width = 100)
-nupp = Button(aken, text = "Värvi valik", font = "time_new_roman 18", fg = "#0d79de", bg = "#c3a4f5", width = 100, command = varvi_valik)
+tekst = Entry(aken, font = "time_new_roman 24", fg = "#0d79de", bg = "#c3a4f5", width = 30)
+nupp = Button(aken, text = "Värvi valik", font = "time_new_roman 18", fg = "#0d79de", bg = "#c3a4f5", width = 30, command = varvi_valik())
 
 
 # Для запуска и распеделения, так же помима pack, place(x = ..., y = ...), grid(column = ..., row = ...)
