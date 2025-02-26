@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>RuutvõrrandiLahendamine.py</StartupFile>
+    <StartupFile>veebleht.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -42,6 +42,7 @@
     <Compile Include="Tingimuslik operaator IF.py" />
     <Compile Include="Valiklaused Ruutvõrrand.py" />
     <Compile Include="vastuvottDef.py" />
+    <Compile Include="veebleht.py" />
     <Compile Include="Vigade otsing -2.py" />
     <Compile Include="Vigade otsing.py" />
     <Compile Include="Основы программирования на Python.py" />
