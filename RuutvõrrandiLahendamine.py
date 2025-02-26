@@ -2,6 +2,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image, ImageTk
 
 global varv, tekst
 
@@ -48,8 +49,8 @@ def joonista():
 
     plt.figure(figsize=(6, 4))
     plt.plot(x, y, label=rf"${a}\sqrt{{x}} + {b}x + {c}$", color="blue")
-    plt.axhline(0, color='black', linewidth=0.5)
-    plt.axvline(0, color='black', linewidth=0.5)
+    plt.axhline(0, color='red', linewidth=0.5)
+    plt.axvline(0, color='red', linewidth=0.5)
     plt.grid(True, linestyle="--", alpha=0.7)
     plt.legend()
     plt.title("Ruutvõrrandi graafik")
@@ -62,7 +63,17 @@ def joonista():
 # Создание окна
 aken = Tk()
 aken.geometry("900x500")
+aken.resizable(False, False)    # Новое заприщаем расширять окно, как по горизонтале так и по вертикале
 aken.title("Ruutvõrrandi lahendamine")
+
+# Добаляем картинку
+original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\ules.jpg")
+resize_pilt = original_pilt.resize((900,500))
+bgpilt = ImageTk.PhotoImage(resize_pilt)
+
+
+labelBg = Label(aken, image=bgpilt)
+labelBg.place(x=0, y=0)
 
 # Заголовок
 pealkiri = Label(aken, text="Ruutvõrrandi lahendamine", font="Times_New_Roman 24", fg="#0d79de", bg="#c3a4f5", pady=20, width=100)

@@ -54,6 +54,8 @@
     <Content Include="Riigid1.txt" />
     <Content Include="riigid_pealinnd.txt" />
     <Content Include="salasona.txt" />
+    <Content Include="ules.jpg" />
+    <Content Include="ules.png" />
     <Content Include="vastuvoetud.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
