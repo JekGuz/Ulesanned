@@ -1,5 +1,5 @@
 ﻿from tkinter import *
-import math
+from math import *
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -7,7 +7,10 @@ global varv, tekst
 
 # Функция для вычисления корней квадратного уравнения
 def lahenda():
-    
+    """
+    Lanendamine a, b, c
+
+    """
     a = float(tekst_a.get())
     b = float(tekst_b.get())
     c = float(tekst_c.get())
@@ -33,6 +36,9 @@ def lahenda():
 
 # Функция для построения графика
 def joonista():
+    """
+    Joonistasime graafik
+    """
     a = float(tekst_a.get())
     b = float(tekst_b.get())
     c = float(tekst_c.get())
@@ -41,7 +47,7 @@ def joonista():
     y = a*x**2 + b*x + c
 
     plt.figure(figsize=(6, 4))
-    plt.plot(x, y, label=f"{a}x² + {b}x + {c}", color="blue")
+    plt.plot(x, y, label=rf"${a}\sqrt{{x}} + {b}x + {c}$", color="blue")
     plt.axhline(0, color='black', linewidth=0.5)
     plt.axvline(0, color='black', linewidth=0.5)
     plt.grid(True, linestyle="--", alpha=0.7)
