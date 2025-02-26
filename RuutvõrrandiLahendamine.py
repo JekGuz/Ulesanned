@@ -68,7 +68,7 @@ aken.title("Ruutvõrrandi lahendamine")
 pealkiri = Label(aken, text="Ruutvõrrandi lahendamine", font="Times_New_Roman 24", fg="#0d79de", bg="#c3a4f5", pady=20, width=100)
 pealkiri.pack()
 
-# Поля ввода коэффициентов (теперь пустые!)
+# Поля ввода
 tekst_a = Entry(aken, font="Times_New_Roman 18", fg="black", bg="white", width=5)
 tekst_a.pack(side=LEFT, padx=5)
 
