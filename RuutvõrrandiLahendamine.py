@@ -1,5 +1,5 @@
 ﻿from tkinter import *
-from math import *
+import math 
 import numpy as np
 import matplotlib.pyplot as plt
 
