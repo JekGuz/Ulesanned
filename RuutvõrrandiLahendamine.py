@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image, ImageTk
 
-global varv, tekst
+global a, b, c, D
 
 # Функция для вычисления корней квадратного уравнения
 def lahenda():
@@ -44,7 +44,7 @@ def joonista():
     b = float(tekst_b.get())
     c = float(tekst_c.get())
 
-    x = np.linspace(-10, 10, 400)
+    x = np.linspace(-20, 20, 200)
     y = a*x**2 + b*x + c
 
     plt.figure(figsize=(6, 4))
@@ -66,7 +66,7 @@ aken.geometry("900x500")
 aken.resizable(False, False)    # Новое заприщаем расширять окно, как по горизонтале так и по вертикале
 aken.title("Ruutvõrrandi lahendamine")
 
-# Добаляем картинку
+# Добаляем картинку (фон)
 original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\ules.jpg")
 resize_pilt = original_pilt.resize((900,500))
 bgpilt = ImageTk.PhotoImage(resize_pilt)
