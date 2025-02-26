@@ -69,7 +69,7 @@ tekst_a.pack(side=LEFT, padx=5)
 Label(aken, text="x**2 +", font="Times_New_Roman 18").pack(side=LEFT)
 
 tekst_b = Entry(aken, font="Times_New_Roman 18", fg="black", bg="white", width=5)
-tekst_b.pack(side=LEFT, padx=5)
+tekst_b.pack(side=LEFT, padx=5) # padx - отступ
 
 Label(aken, text="x +", font="Times_New_Roman 18").pack(side=LEFT)
 
@@ -80,7 +80,7 @@ Label(aken, text="= 0", font="Times_New_Roman 18").pack(side=LEFT)
 
 # Кнопки
 nupp_lahenda = Button(aken, text="Otsustada", font="Times_New_Roman 18", fg="white", bg="darkgreen", width=15, command=lahenda)
-nupp_lahenda.pack(pady=10)
+nupp_lahenda.pack(pady=10) #pady - отступ 
 
 nupp_graafik = Button(aken, text="Graafik", font="Times_New_Roman 18", fg="white", bg="darkgreen", width=15, command=joonista)
 nupp_graafik.pack(pady=10)
