@@ -7,57 +7,51 @@ global varv, tekst
 
 # Функция для вычисления корней квадратного уравнения
 def lahenda():
-    try:
-        a = float(tekst_a.get())
-        b = float(tekst_b.get())
-        c = float(tekst_c.get())
+    
+    a = float(tekst_a.get())
+    b = float(tekst_b.get())
+    c = float(tekst_c.get())
 
-        if a == 0:
-            tulemus.config(text="Viga: a ei saa olla 0", bg="red")
-            return
+    if a == 0:
+        tulemus.config(text="Viga: a ei saa olla 0", bg="red")
+        return
 
-        D = b**2 - 4*a*c
-        vastus = f"D = {D:.2f}\n"
+    D = b**2 - 4*a*c
+    vastus = f"D = {D:.2f}\n"
 
-        if D > 0:
-            x1 = (-b + math.sqrt(D)) / (2 * a)
-            x2 = (-b - math.sqrt(D)) / (2 * a)
-            vastus += f"X1 = {x1:.2f}\nX2 = {x2:.2f}"
-        elif D == 0:
-            x = -b / (2 * a)
-            vastus += f"X = {x:.2f}"
-        else:
-            vastus += "Juur puudub (D < 0)"
+    if D > 0:
+        x1 = (-b + math.sqrt(D)) / (2 * a)
+        x2 = (-b - math.sqrt(D)) / (2 * a)
+        vastus += f"X1 = {x1:.2f}\nX2 = {x2:.2f}"
+    elif D == 0:
+        x = -b / (2 * a)
+        vastus += f"X = {x:.2f}"
+    else:
+        vastus += "Juur puudub (D < 0)"
 
-        tulemus.config(text=vastus, bg="yellow")
-
-    except:
-        tulemus.config(text="Viga: sisestage numbrid!", bg="red")
+    tulemus.config(text=vastus, bg="yellow")
 
 # Функция для построения графика
 def joonista():
-    try:
-        a = float(tekst_a.get())
-        b = float(tekst_b.get())
-        c = float(tekst_c.get())
+    a = float(tekst_a.get())
+    b = float(tekst_b.get())
+    c = float(tekst_c.get())
 
-        x = np.linspace(-10, 10, 400)
-        y = a*x**2 + b*x + c
+    x = np.linspace(-10, 10, 400)
+    y = a*x**2 + b*x + c
 
-        plt.figure(figsize=(6, 4))
-        plt.plot(x, y, label=f"{a}x² + {b}x + {c}", color="blue")
-        plt.axhline(0, color='black', linewidth=0.5)
-        plt.axvline(0, color='black', linewidth=0.5)
-        plt.grid(True, linestyle="--", alpha=0.7)
-        plt.legend()
-        plt.title("Ruutvõrrandi graafik")
-        plt.xlabel("X")
-        plt.ylabel("Y")
+    plt.figure(figsize=(6, 4))
+    plt.plot(x, y, label=f"{a}x² + {b}x + {c}", color="blue")
+    plt.axhline(0, color='black', linewidth=0.5)
+    plt.axvline(0, color='black', linewidth=0.5)
+    plt.grid(True, linestyle="--", alpha=0.7)
+    plt.legend()
+    plt.title("Ruutvõrrandi graafik")
+    plt.xlabel("X")
+    plt.ylabel("Y")
 
-        plt.show()
+    plt.show()
 
-    except:
-        tulemus.config(text="Viga: sisestage numbrid!", bg="red")
 
 # Создание окна
 aken = Tk()
