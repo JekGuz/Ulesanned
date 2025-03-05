@@ -97,4 +97,6 @@ kiri_text.grid(row=3, column=1)
 Button(text="LISA PILT", font=("Times New Roman", 18), fg="white",bg="green", command=vali_pilt).grid(row=5, column=0)
 Button(text="SAADA", font=("Times New Roman", 18), fg="white",bg="green", command=saada_kiri).grid(row=5, column=1)
 
+
+
 aken.mainloop()
