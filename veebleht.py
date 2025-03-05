@@ -17,7 +17,8 @@ def vali_pilt():
     global file
     file = filedialog.askopenfilenames()
     if file:
-        lisa_text.configure(text=file)  # меняем текст lisa_text
+        lisa_text.configure(text="\n".join(file))   # Добаляем "\n" и файлу
+        # lisa_text.configure(text=file)  # меняем текст lisa_text БЫЛО!!!!
     return file
 
 def saada_kiri():
@@ -85,14 +86,25 @@ def lisa_allkiri():
     """
     kiri_text.insert(END, "\n\n" + "Parimate soovidega,\nJekaterina Guzek")   # END -  добавляем подпись в конец с 
 
+def eelvade():
+    """
+    Võimalik vaadata kiri
+    """
+    kellele = email_text.get().strip().split()
+    teema = teema_text.get()
+    kiri = kiri_text.get("1.0", END).strip()
+    # # lisa = lisa_text.configure(text=file)
+    eelvade = f"Email: {''.join(kellele)}\n\nTeema: {''.join(teema)}\n\nKiri: {''.join(kiri)}\n\nLisatud failid: {''.join(file)}"
+    messagebox.showinfo("Eelvaade", eelvade)
+
 aken = Tk()
-aken.geometry("600x600")
+aken.geometry("600x500")
 aken.resizable(False, False)
 aken.title("Veeb")
 
 # Добавляем картинку (фон)
 original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\leht.jpg")
-resize_pilt = original_pilt.resize((600, 600))
+resize_pilt = original_pilt.resize((600, 500))
 bgpilt = ImageTk.PhotoImage(resize_pilt)
 
 # Устанавливаем фон
@@ -124,8 +136,9 @@ kiri_text.grid(row=3, column=1)
 # Кнопки добавляем
 Button(text="LISA PILT", font=("Times New Roman", 18), fg="white",bg="green", command=vali_pilt).place(x=20, y=290)    #.grid(row=5, column=0)
 Button(text="SAADA", font=("Times New Roman", 18), fg="white",bg="green", command=saada_kiri).place(x=160, y=290)        #.grid(row=5, column=1)
-Button(text="PUHASTA", font=("Times New Roman", 18), fg="white",bg="red", command=puhastamine).place(x=270, y=290)       #.grid(row=5, column=2)
-Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="green", command=lisa_allkiri).place(x=410, y=290)
+Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="green", command=lisa_allkiri).place(x=270, y=290)
+Button(text="PUHASTA", font=("Times New Roman", 18), fg="white",bg="red", command=puhastamine).place(x=400, y=290)      #.grid(row=5, column=2)
+Button(text="EELVAADE", font=("Times New Roman", 18), fg="white",bg="green", command=eelvade).place(x=20, y=360) 
 
 
 
