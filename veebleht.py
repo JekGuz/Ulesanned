@@ -15,7 +15,7 @@ def vali_pilt():
     Valime pilt
     """
     global file
-    file = filedialog.askopenfilename()
+    file = filedialog.askopenfilenames()
     if file:
         lisa_text.configure(text=file)  # меняем текст lisa_text
     return file
@@ -81,7 +81,7 @@ def puhastamine():
 
 def lisa_allkiri():
     """
-    Lisab allkirja kirja lõppu
+    Lisab allkirja kirja lõppuni
     """
     kiri_text.insert(END, "\n\n" + "Parimate soovidega,\nJekaterina Guzek")   # END -  добавляем подпись в конец с 
 
@@ -125,7 +125,7 @@ kiri_text.grid(row=3, column=1)
 Button(text="LISA PILT", font=("Times New Roman", 18), fg="white",bg="green", command=vali_pilt).place(x=20, y=290)    #.grid(row=5, column=0)
 Button(text="SAADA", font=("Times New Roman", 18), fg="white",bg="green", command=saada_kiri).place(x=160, y=290)        #.grid(row=5, column=1)
 Button(text="PUHASTA", font=("Times New Roman", 18), fg="white",bg="red", command=puhastamine).place(x=270, y=290)       #.grid(row=5, column=2)
-Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="blue", command=lisa_allkiri).place(x=410, y=290)
+Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="green", command=lisa_allkiri).place(x=410, y=290)
 
 
 
