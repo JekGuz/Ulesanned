@@ -6,6 +6,7 @@ from tkinter import filedialog
 import imghdr
 from tkinter import messagebox
 from PIL import Image, ImageTk
+from tkinter import ttk
 
 
 file = None  # Глобальная переменная для хранения
@@ -51,7 +52,8 @@ def saada_kiri():
     msg['To'] = kellele
     
     try:
-        with open(file, 'rb') as fpilt:
+# with open(file, 'rb') as fpilt: Для одного файла исправляем file[] - что может быть несколько файлов
+        with open(file[0], 'rb') as fpilt:   
             pilt = fpilt.read()
         msg.add_attachment(pilt, maintype='image', subtype=imghdr.what(None, pilt))
     except Exception as e:
@@ -93,14 +95,21 @@ def eelvade():
     kellele = email_text.get().strip().split()
     teema = teema_text.get()
     kiri = kiri_text.get("1.0", END).strip()
-    # # lisa = lisa_text.configure(text=file)
+    lisa = lisa_text.configure(text="\n".join(file))
     eelvade = f"Email: {''.join(kellele)}\n\nTeema: {''.join(teema)}\n\nKiri: {''.join(kiri)}\n\nLisatud failid: {''.join(file)}"
     messagebox.showinfo("Eelvaade", eelvade)
+
+# def mood():
+#     """
+#     Valime/teeme tume teema
+#     """
+
 
 aken = Tk()
 aken.geometry("600x500")
 aken.resizable(False, False)
 aken.title("Veeb")
+
 
 # Добавляем картинку (фон)
 original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\leht.jpg")
@@ -134,6 +143,7 @@ kiri_text = Text(aken, font=("Times New Roman", 18), fg="black", bg="#95da96", w
 kiri_text.grid(row=3, column=1)
 
 # Кнопки добавляем
+# button = ttk.Button(text="LISA PILT", command=vali_pilt).place(x=20, y=290)
 Button(text="LISA PILT", font=("Times New Roman", 18), fg="white",bg="green", command=vali_pilt).place(x=20, y=290)    #.grid(row=5, column=0)
 Button(text="SAADA", font=("Times New Roman", 18), fg="white",bg="green", command=saada_kiri).place(x=160, y=290)        #.grid(row=5, column=1)
 Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="green", command=lisa_allkiri).place(x=270, y=290)
