@@ -5,6 +5,7 @@ from email.message import EmailMessage
 from tkinter import filedialog
 import imghdr
 from tkinter import messagebox
+from PIL import Image, ImageTk
 
 
 file = None  # Глобальная переменная для хранения
@@ -71,18 +72,33 @@ def puhastamine():
     """
     Puhastame kõik väljad
     """
-    global file   # обращаемся к файлу глобально
+    global file 
     email_text.delete(0, END)  # удаляем значение в поле email_text  0 - начальная позиция
     teema_text.delete(0, END)  # END – конечная позиция (весь текст будет удалён)
     kiri_text.delete("1.0", END) # 1.0 - первая строка нулевой симфол END все удаляем
     file = None
     lisa_text.configure(text="...") # меняем в поле lisa_text - на ...
 
+def lisa_allkiri():
+    """
+    Lisab allkirja kirja lõppu
+    """
+    kiri_text.insert(END, "\n\n" + "Parimate soovidega,\nJekaterina Guzek")   # END -  добавляем подпись в конец с 
 
 aken = Tk()
 aken.geometry("600x600")
 aken.resizable(False, False)
 aken.title("Veeb")
+
+# Добавляем картинку (фон)
+original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\leht.jpg")
+resize_pilt = original_pilt.resize((600, 600))
+bgpilt = ImageTk.PhotoImage(resize_pilt)
+
+# Устанавливаем фон
+labelBg = Label(aken, image=bgpilt)
+labelBg.place(x=0, y=0, relwidth=1, relheight=1) 
+
 
 # Окна добаляем
 Label(aken, text="Email:", font=("Times New Roman", 18), fg="white",bg="green", padx=30).grid(row=0, column=0)
@@ -106,9 +122,11 @@ kiri_text = Text(aken, font=("Times New Roman", 18), fg="black", bg="#95da96", w
 kiri_text.grid(row=3, column=1)
 
 # Кнопки добавляем
-Button(text="LISA PILT", font=("Times New Roman", 18), fg="white",bg="green", command=vali_pilt).place(x=100, y=300)    #.grid(row=5, column=0)
-Button(text="SAADA", font=("Times New Roman", 18), fg="white",bg="green", command=saada_kiri).place(x=240, y=300)        #.grid(row=5, column=1)
-Button(text="PUHASTA", font=("Times New Roman", 18), fg="white",bg="red", command=puhastamine).place(x=350, y=300)       #.grid(row=5, column=2)
+Button(text="LISA PILT", font=("Times New Roman", 18), fg="white",bg="green", command=vali_pilt).place(x=20, y=290)    #.grid(row=5, column=0)
+Button(text="SAADA", font=("Times New Roman", 18), fg="white",bg="green", command=saada_kiri).place(x=160, y=290)        #.grid(row=5, column=1)
+Button(text="PUHASTA", font=("Times New Roman", 18), fg="white",bg="red", command=puhastamine).place(x=270, y=290)       #.grid(row=5, column=2)
+Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="blue", command=lisa_allkiri).place(x=410, y=290)
+
 
 
 aken.mainloop()
