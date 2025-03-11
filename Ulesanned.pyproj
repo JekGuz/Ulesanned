@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>veebleht.py</StartupFile>
+    <StartupFile>Numegoloogia_Nime arv.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,7 @@
     <Compile Include="Graafiline_liides.py" />
     <Compile Include="MyModeleDef.py" />
     <Compile Include="MyModule.py" />
+    <Compile Include="Numegoloogia_Nime arv.py" />
     <Compile Include="Plokkskeemide koostamine V2.py" />
     <Compile Include="praktiliine too 2 listid.py" />
     <Compile Include="Praktiline töö Matemaatika.py" />
@@ -53,6 +54,8 @@
     <Content Include="kusim.txt" />
     <Content Include="leht.jpg" />
     <Content Include="loginid.txt" />
+    <Content Include="nimetulemused.txt" />
+    <Content Include="numbers.jpg" />
     <Content Include="Riigid1.txt" />
     <Content Include="riigid_pealinnd.txt" />
     <Content Include="salasona.txt" />

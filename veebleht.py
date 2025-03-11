@@ -99,16 +99,20 @@ def eelvade():
     eelvade = f"Email: {''.join(kellele)}\n\nTeema: {''.join(teema)}\n\nKiri: {''.join(kiri)}\n\nLisatud failid: {''.join(file)}"
     messagebox.showinfo("Eelvaade", eelvade)
 
-# def mood():
-#     """
-#     Valime/teeme tume teema
-#     """
+def snake():
+    """
+    🐍
+    """
+    for i in range(1, 100, 1):
+        kiri_text.insert(END, "🐍")
+
 
 
 aken = Tk()
 aken.geometry("600x500")
 aken.resizable(False, False)
 aken.title("Veeb")
+
 
 
 # Добавляем картинку (фон)
@@ -150,6 +154,7 @@ Button(text="ALLKIRI", font=("Times New Roman", 18), fg="white",bg="green", comm
 Button(text="PUHASTA", font=("Times New Roman", 18), fg="white",bg="red", command=puhastamine).place(x=400, y=290)      #.grid(row=5, column=2)
 Button(text="EELVAADE", font=("Times New Roman", 18), fg="white",bg="green", command=eelvade).place(x=20, y=360) 
 
+Button(text="🐍", font=("Times New Roman", 18), fg="white",bg="green", command=snake).place(x=180, y=360)
 
 
 aken.mainloop()
