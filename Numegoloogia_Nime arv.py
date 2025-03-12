@@ -128,11 +128,18 @@ def arvuta():
         messagebox.showerror("Viga", "Kontroll nimi")
         return
     
-    # Обращаемся к ранним буквам где мы нашли в таблице, чтобы получить цифру (имени цифру)
+    # Вычисляем число имени
     number = arvuta_nime_number(nimi, tabel)
+    # Загружаем словарь с описаниями чисел из файла
+    number_tahendus = failiavamine(r"C:\Users\kotik\source\repos\Ulesanned\Textnum.txt")
+    # Получаем значение из файла, если есть, иначе пишем "Tähendus puudub"
+    tahendus = number_tahendus.get(f"*{number}", "Tähendus puudub")
+    # Обновляем Label tulemus: показываем число и его объяснение
+    tulemus.config(text=f"{number}\n{tahendus}")
 
-    tulemus.config(text=number)
     return number
+
+
 
 # Функция для сохранения результата
 def salvesta():
@@ -145,13 +152,36 @@ def salvesta():
     else:
         messagebox.showwarning("Hoiatus", "Hoiatus")
 
+# Фаил открытие - взяла у Анны  
+def failiavamine(fail):
+    global number_tahendus
+    number_tahendus = {}
+
+    with open(fail, "r", encoding="utf-8") as file:
+        for line in file:
+            line = line.strip()  # Убираем пробелы и переносы строк
+
+            if not line or '-' not in line:  # Пропускаем пустые строки и строки без "-"
+                print({line})
+                continue
+            
+            parts = line.split('-', 1)  # Разделяем строку по первому "-"
+            
+            if len(parts) == 2:  # Проверяем, что получилось два элемента
+                k, v = parts
+                number_tahendus[k.strip()] = v.strip()  # Убираем лишние пробелы
+
+    return number_tahendus
+
+# Делаем открытие для октрытия файла -  взяла у Анный
+
 # Создание графического интерфейса
 aken = Tk()
 aken.title("Nime numbri arvutaja")
-aken.geometry("400x300")
+aken.geometry("500x500")
 
 original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\numbers.jpg")
-resize_pilt = original_pilt.resize((400, 300))
+resize_pilt = original_pilt.resize((500, 500))
 bgpilt = ImageTk.PhotoImage(resize_pilt)
 
 # Устанавливаем фон
@@ -168,12 +198,15 @@ sisend = Entry(aken, font=("Monotype Corsiva", 18), fg="black", bg="#e7b2a4", wi
 sisend.grid(row=3, column=0, padx=40)
 
 # Метка для вывода результата   / В две строчке иначе не считывается tulemus - что находиться в расчетах (arvesta)
+Label(aken, text="Teie number:", font=("Monotype Corsiva", 18), fg="black", bg="SystemButtonFace", padx=30).grid(row=5, column=0)
+# # tulemus = Text(aken, font=("Monotype Corsiva", 12),fg="black",bg="#e7b2a4", height=5, width=40, wrap=WORD)
+# # tulemus.grid(row=6, column=0)
 tulemus = Label(aken, font=("Monotype Corsiva", 18), text="", fg="black",bg="#e7b2a4", padx=30)
-tulemus.grid(row=5, column=0)
+tulemus.grid(row=6, column=0)
 
 # Кнопки
 Button(text="Arvuta number", font=("Monotype Corsiva", 18), fg="black", bg="SystemButtonFace", command=arvuta).grid(row=4, column=0)
-Button(text="Salvesta tulemus", font=("Monotype Corsiva", 18), fg="black", bg="SystemButtonFace", command=salvesta).grid(row=6, column=0)
+Button(text="Salvesta tulemus", font=("Monotype Corsiva", 18), fg="black", bg="SystemButtonFace", command=salvesta).grid(row=7, column=0)
 
 
 # Запуск интерфейса

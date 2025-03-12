@@ -1,1 +1,5 @@
 
+Ksenia: 5
+Jekaterina: 4
+Evgeny: 6
+Ksenia: 5

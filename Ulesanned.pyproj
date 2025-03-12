@@ -59,6 +59,7 @@
     <Content Include="Riigid1.txt" />
     <Content Include="riigid_pealinnd.txt" />
     <Content Include="salasona.txt" />
+    <Content Include="Textnum.txt" />
     <Content Include="ules.jpg" />
     <Content Include="ules.png" />
     <Content Include="vastuvoetud.txt" />
