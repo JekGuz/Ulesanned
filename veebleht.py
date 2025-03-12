@@ -114,7 +114,6 @@ aken.resizable(False, False)
 aken.title("Veeb")
 
 
-
 # Добавляем картинку (фон)
 original_pilt = Image.open(r"C:\Users\kotik\source\repos\Ulesanned\leht.jpg")
 resize_pilt = original_pilt.resize((600, 500))
