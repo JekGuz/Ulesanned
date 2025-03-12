@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>mang_makse.py</StartupFile>
+    <StartupFile>DataBase.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="10 практических заданий по теме Циклы.py" />
+    <Compile Include="DataBase.py" />
     <Compile Include="Def_moodul.py" />
     <Compile Include="euroopa_riigid.py" />
     <Compile Include="funktsion Def.py" />
@@ -65,6 +66,9 @@
     <Content Include="ules.jpg" />
     <Content Include="ules.png" />
     <Content Include="vastuvoetud.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
