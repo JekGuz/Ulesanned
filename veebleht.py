@@ -24,7 +24,7 @@ def vali_pilt():
 
 def saada_kiri():
     """
-    Saadame kiri
+    Saadame kiri  "xtjr iomj prvr orzr" 
     """
     global file
     kellele = email_text.get().strip().split(",")    # добавить несколько пользователей
@@ -32,7 +32,7 @@ def saada_kiri():
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "kotikj89@gmail.com"
-    password = "xtjr iomj prvr orzr"  
+    password = "**** **** **** **** ***"  
     
     # Проверки перед отправкой
     if not kellele:

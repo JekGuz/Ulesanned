@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>DataBase.py</StartupFile>
+    <StartupFile>Ulesanne_DATABASE\DataBASE_tkinter.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,18 +23,20 @@
   <ItemGroup>
     <Compile Include="10 практических заданий по теме Циклы.py" />
     <Compile Include="DataBase.py" />
-    <Compile Include="Def_moodul.py" />
-    <Compile Include="euroopa_riigid.py" />
-    <Compile Include="funktsion Def.py" />
+    <Compile Include="Ulesanne_DATABASE\DataBASE_tkinter.py" />
+    <Compile Include="Ulesanne DEF\Def_moodul.py" />
+    <Compile Include="Ulesanne MyWork\Game.py" />
+    <Compile Include="Ülesanne EUROOPE\euroopa_riigid.py" />
+    <Compile Include="Ulesanne DEF\funktsion Def.py" />
     <Compile Include="Grafiline_interfeis_liides_ kookku.py" />
-    <Compile Include="Isikukood.py" />
-    <Compile Include="isikukoodDEF.py" />
+    <Compile Include="Ulesanne isikukood\Isikukood.py" />
+    <Compile Include="Ulesanne isikukood\isikukoodDEF.py" />
     <Compile Include="Lihtsad prgrammid.py" />
-    <Compile Include="Funktsioonide print%28%29,input%28%29, float%28%29, int%28%29 kasutamine.py" />
+    <Compile Include="Ulesanne print, input\Funktsioonide print%28%29,input%28%29, float%28%29, int%28%29 kasutamine.py" />
     <Compile Include="Graafiline_liides.py" />
     <Compile Include="mang_makse.py" />
-    <Compile Include="MyModeleDef.py" />
-    <Compile Include="MyModule.py" />
+    <Compile Include="Ulesanne MyModele\MyModeleDef.py" />
+    <Compile Include="Ulesanne MyModele\MyModule.py" />
     <Compile Include="Numegoloogia_Nime arv.py" />
     <Compile Include="Plokkskeemide koostamine V2.py" />
     <Compile Include="praktiliine too 2 listid.py" />
@@ -69,6 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
+    <Folder Include="Ulesanne_DATABASE\" />
+    <Folder Include="Ulesanne MyWork\" />
+    <Folder Include="Ulesanne MyModele\" />
+    <Folder Include="Ulesanne DEF\" />
+    <Folder Include="Ulesanne print, input\" />
+    <Folder Include="Ulesanne isikukood\" />
+    <Folder Include="Ülesanne EUROOPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
