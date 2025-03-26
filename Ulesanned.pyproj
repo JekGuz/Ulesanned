@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Ulesanne_DATABASE\DataBASE_tkinter.py</StartupFile>
+    <StartupFile>Ulesanne MyWork\Game.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,7 +23,7 @@
   <ItemGroup>
     <Compile Include="10 практических заданий по теме Циклы.py" />
     <Compile Include="DataBase.py" />
-    <Compile Include="Ulesanne_DATABASE\DataBASE_tkinter.py" />
+    <Compile Include="Ulesanne_DATABASE\MovieDB.py" />
     <Compile Include="Ulesanne DEF\Def_moodul.py" />
     <Compile Include="Ulesanne MyWork\Game.py" />
     <Compile Include="Ülesanne EUROOPE\euroopa_riigid.py" />
@@ -67,6 +67,7 @@
     <Content Include="Textnum.txt" />
     <Content Include="ules.jpg" />
     <Content Include="ules.png" />
+    <Content Include="Ulesanne MyWork\wood.jpg" />
     <Content Include="vastuvoetud.txt" />
   </ItemGroup>
   <ItemGroup>
