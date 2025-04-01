@@ -24,6 +24,8 @@ treasure_deck = [
     "Крыса +1", "Молот +4"
 ]
 
+
+# Это список/лист в нем словарь!
 door_deck = [
     {"name": "Молотая крысотка", "power": 1, "treasures": 1},
     {"name": "Типа вошки", "power": 1, "treasures": 1},
@@ -81,7 +83,7 @@ def show_card_image(card_name):
 # Выбираем что у нас за предмет в соровищах
 def get_item_type(item_name):
     item_name = item_name.lower()
-    if "меч" in item_name or "кийн" in item_name or "кинжал" in item_name or "молот" in item_name:
+    if "меч" in item_name or "кийн" in item_name or "кинжал" in item_name or "молот" in item_name or "крыса" in item_name:
         return "weapon"
     elif "броник" in item_name or "щит" in item_name:
         return "armor"
@@ -245,5 +247,6 @@ run_button.grid(row=0, column=2, padx=5)
 
 end_turn_button = Button(button_frame, text="Конец хода", command=end_turn)
 end_turn_button.grid(row=0, column=3, padx=5)
+
 
 root.mainloop()
