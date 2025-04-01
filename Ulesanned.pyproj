@@ -67,13 +67,23 @@
     <Content Include="Textnum.txt" />
     <Content Include="ules.jpg" />
     <Content Include="ules.png" />
-    <Content Include="Ulesanne_MyWork\klass_voin.png" />
     <Content Include="Ulesanne_MyWork\wood.jpg" />
-    <Content Include="Ulesanne_MyWork\класс_вор.png" />
-    <Content Include="Ulesanne_MyWork\класс_клирик.png" />
-    <Content Include="Ulesanne_MyWork\класс_маг.png" />
-    <Content Include="Ulesanne_MyWork\класс_эльф.png" />
     <Content Include="vastuvoetud.txt" />
+    <Content Include="класс_воин.png" />
+    <Content Include="класс_вор.png" />
+    <Content Include="класс_клирик.png" />
+    <Content Include="класс_маг.png" />
+    <Content Include="класс_эльф.png" />
+    <Content Include="конь_андедный.png" />
+    <Content Include="леприкон.png" />
+    <Content Include="лятучие_лягушки.png" />
+    <Content Include="молотая_крысотка.png" />
+    <Content Include="питбуль.png" />
+    <Content Include="получи_уровень.png" />
+    <Content Include="проклятие!_потеряй_уровень.png" />
+    <Content Include="сердитый_бройлер.png" />
+    <Content Include="типа_вошки.png" />
+    <Content Include="утконтикора.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
