@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1660b881-3f91-43a7-97a9-06ca68d365cf</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Ulesanne MyWork\Game.py</StartupFile>
+    <StartupFile>Ulesanne_MyWork\Game.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,7 +25,7 @@
     <Compile Include="DataBase.py" />
     <Compile Include="Ulesanne_DATABASE\MovieDB.py" />
     <Compile Include="Ulesanne DEF\Def_moodul.py" />
-    <Compile Include="Ulesanne MyWork\Game.py" />
+    <Compile Include="Ulesanne_MyWork\Game.py" />
     <Compile Include="Ülesanne EUROOPE\euroopa_riigid.py" />
     <Compile Include="Ulesanne DEF\funktsion Def.py" />
     <Compile Include="Grafiline_interfeis_liides_ kookku.py" />
@@ -67,13 +67,18 @@
     <Content Include="Textnum.txt" />
     <Content Include="ules.jpg" />
     <Content Include="ules.png" />
-    <Content Include="Ulesanne MyWork\wood.jpg" />
+    <Content Include="Ulesanne_MyWork\klass_voin.png" />
+    <Content Include="Ulesanne_MyWork\wood.jpg" />
+    <Content Include="Ulesanne_MyWork\класс_вор.png" />
+    <Content Include="Ulesanne_MyWork\класс_клирик.png" />
+    <Content Include="Ulesanne_MyWork\класс_маг.png" />
+    <Content Include="Ulesanne_MyWork\класс_эльф.png" />
     <Content Include="vastuvoetud.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
     <Folder Include="Ulesanne_DATABASE\" />
-    <Folder Include="Ulesanne MyWork\" />
+    <Folder Include="Ulesanne_MyWork\" />
     <Folder Include="Ulesanne MyModele\" />
     <Folder Include="Ulesanne DEF\" />
     <Folder Include="Ulesanne print, input\" />
