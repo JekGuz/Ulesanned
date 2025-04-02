@@ -3,6 +3,7 @@ from PIL import Image, ImageTk
 from tkinter import Tk, Button, Label, Frame, DISABLED, NORMAL, messagebox
 import unicodedata
 import os
+import sys
 
 # Глобальные переменные
 player_level = 1
@@ -50,10 +51,12 @@ door_deck = [
 random.shuffle(door_deck)
 random.shuffle(treasure_deck)
 
+
+
 # Функция отображения изображения карты
 def normalize_card_name(card_name):
      # Удалим спецсимволы и переведем в нормальную форму
-    name = unicodedata.normalize("NFKD", card_name)
+    name = unicodedata.normalize("NFKD", card_name)  # "NFKD" — это один из четырёх вариантов нормализации
     name = name.lower().replace(" ", "_")
     name = ''.join(c for c in name if c.isalnum() or c in "_")
     return name
@@ -80,7 +83,7 @@ def show_card_image(card_name):
         card_image_label.image = None
         card_image_label.config(image="", text="(нет изображения)")
 
-# Выбираем что у нас за предмет в соровищах
+# Выбираем что у нас за предмет в соровищах (определяет предмет по ключевым словам)
 def get_item_type(item_name):
     item_name = item_name.lower()
     if "меч" in item_name or "кийн" in item_name or "кинжал" in item_name or "молот" in item_name or "крыса" in item_name:
@@ -91,7 +94,7 @@ def get_item_type(item_name):
         return "helmet"
     return None
 
-# Обновление информации
+# Обновление информации (визуальную инфо уровень, класс, карты в руке, экипировка)
 def update_ui():
     class_text = player_class if player_class else "Человек"
      # Убираем класс из сокровищ
@@ -130,6 +133,7 @@ def draw_door():
             show_card_image(card["name"])
             player_level += 1
             info_label.config(text=f"Получи уровень! {card['name']}\nУровень: {player_level}")
+            player_level = max(1, player_level + 1) # сегодня добавила увеличить уровень
         elif card.get("type") == "class":
             show_card_image(card["name"])
             if player_class:
@@ -201,10 +205,18 @@ def run_away():
     run_button.config(state=DISABLED)
     fight_button.config(state=DISABLED)
 
-# Конец хода
+# Конец хода (сбрасывает все показатили)
 def end_turn():
+    global player_level, player_bonus, player_hand, player_class, equipped, current_monster
+    player_level = 1
+    player_bonus = 0
+    player_hand = []
+    player_class = None
+    equipped = {"weapon": None, "armor": None, "helmet": None}
+    current_monster = None
     info_label.config(text="Конец хода! Ждем следующего игрока.")
     card_image_label.config(image="", text="")
+    update_ui()
 
 # Главное окно
 root = Tk()
