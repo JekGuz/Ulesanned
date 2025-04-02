@@ -61,12 +61,14 @@
     <Content Include="loginid.txt" />
     <Content Include="nimetulemused.txt" />
     <Content Include="numbers.jpg" />
+    <Content Include="player.txt" />
     <Content Include="Riigid1.txt" />
     <Content Include="riigid_pealinnd.txt" />
     <Content Include="salasona.txt" />
     <Content Include="Textnum.txt" />
     <Content Include="ules.jpg" />
     <Content Include="ules.png" />
+    <Content Include="Ulesanne_MyWork\player.txt" />
     <Content Include="Ulesanne_MyWork\wood.jpg" />
     <Content Include="Ulesanne_MyWork\Башмаки_2.png" />
     <Content Include="Ulesanne_MyWork\броник_3.png" />

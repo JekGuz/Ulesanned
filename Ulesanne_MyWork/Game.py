@@ -3,10 +3,13 @@
 
 import random
 from PIL import Image, ImageTk
-from tkinter import Tk, Button, Label, Frame, DISABLED, NORMAL, messagebox
+from tkinter import Tk, Button, Label, Frame, DISABLED, NORMAL, messagebox, simpledialog
 import unicodedata
 import os
 # import sys # Делала exe
+from tkinter.simpledialog import askstring
+
+
 
 # Глобальные переменные
 player_level = 1
@@ -14,6 +17,8 @@ player_bonus = 0
 player_hand = []
 current_monster = None
 player_class = None
+player_name = "Безымянный"
+
 
 
 equipped = {
@@ -242,6 +247,94 @@ def end_turn():
     # Сброс цвета рамки
     card_frame.config(highlightbackground="#ffffff")
 
+# Запрашиваем имя персонажа чтобы его потом сохранять меняем его местами с низу выше, т.к. надо раньше его чем запись
+def ask_player_name():
+    global player_name
+    name = simpledialog.askstring("Имя игрока", "Введите имя своего персонажа:")
+    if name:
+        player_name = name
+        player_name_label.config(text=f"🎲 Игрок: {player_name}")
+
+# Сохрание в фаил player, взяла с предыдущих работ и коректировала данные что записываем
+def save_game():
+    print("== Сохраняем игру ==")  # ← проверим, вызывается ли
+    print("Имя:", player_name)
+    print("Уровень:", player_level)
+    print("Класс:", player_class)
+    print("Карты:", player_hand)
+    print("Экипировка:", equipped)
+    print("Бонус:", player_bonus)
+    
+    # Проверяем свой фаил, т.к. не могу понять пуст лист и все
+    print("Содержимое файла:")
+    with open("player.txt", "r", encoding="utf-8") as f:
+        print(f.read())
+
+    with open("player.txt", "a", encoding="utf-8") as file:         # меняем w на a т.к. будем записывать не сколько игроков
+        file.write(f"{player_name}\n")
+        file.write(f"{player_level}\n")
+        file.write(f"{player_class if player_class else 'None'}\n")
+        file.write(','.join(player_hand) + "\n")
+        file.write(','.join(f"{slot}:{item}" for slot, item in equipped.items() if item) + "\n")
+        file.write(str(player_bonus)+ "\n")
+
+    messagebox.showinfo("Сохранено", "До скорой встречи, игра сохранена!")
+
+# Загрузка игрока, взяла с предудущих работ и коректировала
+def load_game():
+    global player_name, player_level, player_class, player_hand, equipped, player_bonus
+
+    if not os.path.exists("player.txt"):
+        messagebox.showerror("Ошибка", "Файл player.txt не найден!")
+        return
+
+    try:
+        with open("player.txt", "r", encoding="utf-8") as file:
+            lines = [line.strip() for line in file.readlines()]
+        
+        if len(lines) < 6:
+            messagebox.showerror("Ошибка", "Файл пуст или повреждён")
+            return
+
+        # Разбиваем на блоки по 6 строк (один игрок)
+        blocks = [lines[i:i+6] for i in range(0, len(lines), 6)]
+        all_names = [block[0] for block in blocks]
+
+        # Спрашиваем имя игрока
+        name = askstring("Загрузка", f"Доступные игроки:\n{', '.join(all_names)}\n\nКого загрузить?")
+        if not name:
+            return
+
+        found = False
+        for block in blocks:
+            if block[0] == name:
+                player_name = block[0]
+                player_level = int(block[1])
+                player_class = block[2]
+                if player_class == "None":
+                    player_class = None
+                player_hand = block[3].split(',') if block[3] else []
+                equipped = {"weapon": None, "armor": None, "helmet": None}
+                equipped_data = block[4].split(',')
+                for item in equipped_data:
+                    if ':' in item:
+                        slot, value = item.split(':', 1)
+                        equipped[slot] = value
+                player_bonus = int(block[5])
+                found = True
+                break
+
+        if found:
+            update_ui()
+            player_name_label.config(text=f"🎲 Игрок: {player_name}")
+            messagebox.showinfo("Загружено", f"Игрок {player_name}, может продолжить игру!")
+        else:
+            messagebox.showerror("Ошибка", "Игрок не найден!")
+
+    except:
+        messagebox.showerror("Ошибка", f"Не удалось загрузить игру")
+
+
 # Главное окно
 root = Tk()
 root.title("Манчкин на Python")
@@ -255,6 +348,11 @@ Label(root, image=bg_photo).place(x=0, y=0, relwidth=1, relheight=1)
 
 # Заголовок
 Label(root, text="Добро пожаловать в Манчкин!", font=("Arial", 16), bg="#ffffff").pack(pady=10)
+
+# Добавляем имя игрока
+player_name_label = Label(root, text="", font=("Arial", 12), bg="#ffffff")
+player_name_label.pack(pady=5)
+player_name_label.config(text=f"Игрок: {player_name}")
 
 # Информация игрока
 info_label = Label(root, text="Уровень: 1\nКарты: []", font=("Arial", 12), bg="#ffffff")
@@ -271,7 +369,7 @@ player_status_label = Label(root, font=("Arial", 11), bg="#ffffff")
 player_status_label.pack(pady=5)
 
 # Кнопки
-button_frame = Frame(root, bg="#ffffff")
+button_frame = Frame(root, bg="#ffffff", highlightthickness=5)
 button_frame.pack(pady=10)
 
 draw_door_button = Button(button_frame, text="Открыть Дверь", command=draw_door)
@@ -286,5 +384,14 @@ run_button.grid(row=0, column=2, padx=5)
 end_turn_button = Button(button_frame, text="Конец хода", command=end_turn)
 end_turn_button.grid(row=0, column=3, padx=5)
 
+# Новые кнопки на сохранить и загрузить
+save_button = Button(button_frame, text="Сохранить", command=save_game)
+save_button.grid(row=1, column=1, pady=5)
+
+load_button = Button(button_frame, text="Загрузить", command=load_game)
+load_button.grid(row=1, column=2, pady=5)
+
+# В начале запрашиваем имя персонажа
+ask_player_name()
 
 root.mainloop()
