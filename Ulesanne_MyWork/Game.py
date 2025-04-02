@@ -1,9 +1,12 @@
+# Добавить индекатор для понимания победим ли мы монстра или нет
+# Сохраниение в файле отдельным, чтобы можно было бы вернуться к своему персонажу
+
 import random
 from PIL import Image, ImageTk
 from tkinter import Tk, Button, Label, Frame, DISABLED, NORMAL, messagebox
 import unicodedata
 import os
-import sys
+# import sys # Делала exe
 
 # Глобальные переменные
 player_level = 1
@@ -61,13 +64,13 @@ def normalize_card_name(card_name):
     name = ''.join(c for c in name if c.isalnum() or c in "_")
     return name
 
-
+# Функция отображения изображения карты
 def show_card_image(card_name):
     try:
         normalized_name = normalize_card_name(card_name)
         filename = f"{normalized_name}.png" # Файл в той же папке
 
-        # Проверяю картинки на читаемость
+        # Проверяю картинки на читаемость / очень долго искала от куда и куда т.к.
         print(f"Загружаем картинку: {filename}")
         print("Существует ли?", os.path.exists(filename))
         print("Текущая папка:", os.getcwd())
@@ -122,6 +125,21 @@ def draw_door():
         if "power" in card:
             show_card_image(card["name"])
             current_monster = card
+
+            # Подсчёт силы игрока (уровень + бонус)
+            player_power = player_level + player_bonus
+            monster_power = card["power"]
+
+            # Меняем цвет рамки в зависимости от исхода боя тоесть прописываю зеленую больше или равно, в другом случаи красная
+            if player_power > monster_power or player_power == monster_power:
+                card_frame.config(highlightbackground="green") # опачки (для себя написала, а оно работает)
+            else:
+                card_frame.config(highlightbackground="red")
+
+            # Старая часть, оставляем
+            info_label.config(text=f"Монстр: {card['name']} (Сила {card['power']})") 
+            fight_button.config(state=NORMAL)
+            run_button.config(state=NORMAL)
             info_label.config(text=f"Монстр: {card['name']} (Сила {card['power']})")
             fight_button.config(state=NORMAL)
             run_button.config(state=NORMAL)
@@ -171,7 +189,7 @@ def fight():
                     card = random.choice(treasure_deck)
                     item_type = get_item_type(card)
                     if item_type and equipped[item_type]:
-                        answer = messagebox.askyesno(
+                        answer = messagebox.askyesno(   # askyesno - yes or no messegebox
                             "Новая экипировка",
                             f"У тебя уже есть {item_type}: {equipped[item_type]}\nЗаменить на {card}?"
                         )
@@ -192,6 +210,8 @@ def fight():
             info_label.config(text="Ты проиграл! Пробуй убежать!")
         current_monster = None
         fight_button.config(state=DISABLED)
+        # Сброс цвета рамки
+        card_frame.config(highlightbackground="#ffffff")
 
 # Убежать
 def run_away():
@@ -204,6 +224,8 @@ def run_away():
         info_label.config(text="Тебя поймали! Потеряй 1 уровень")
     run_button.config(state=DISABLED)
     fight_button.config(state=DISABLED)
+    # Сброс цвета рамки
+    card_frame.config(highlightbackground="#ffffff")
 
 # Конец хода (сбрасывает все показатили)
 def end_turn():
@@ -217,6 +239,8 @@ def end_turn():
     info_label.config(text="Конец хода! Ждем следующего игрока.")
     card_image_label.config(image="", text="")
     update_ui()
+    # Сброс цвета рамки
+    card_frame.config(highlightbackground="#ffffff")
 
 # Главное окно
 root = Tk()
@@ -236,9 +260,11 @@ Label(root, text="Добро пожаловать в Манчкин!", font=("Ar
 info_label = Label(root, text="Уровень: 1\nКарты: []", font=("Arial", 12), bg="#ffffff")
 info_label.pack(pady=10)
 
-# Показ изображения карты
-card_image_label = Label(root, bg="#ffffff", text="(картинка будет тут)", font=("Arial", 10))
-card_image_label.pack(pady=10)
+# Добавляем рамочку белую, которую будем менять
+card_frame = Frame(root, bg="#ffffff", highlightthickness=8)
+card_frame.pack(pady=10)
+card_image_label = Label(card_frame, bg="#ffffff", text="(картинка будет тут)", font=("Arial", 10))
+card_image_label.pack()
 
 # Статусы игрока
 player_status_label = Label(root, font=("Arial", 11), bg="#ffffff")
